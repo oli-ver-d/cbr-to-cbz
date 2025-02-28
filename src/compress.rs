@@ -1,7 +1,7 @@
-use std::{fs::File, io::{Read, Write}, path::Path};
+use std::{fs::File, io::{Read, Write}};
 use anyhow::Result;
 use tempfile::TempDir;
-use zip::{write::{FileOptions, SimpleFileOptions}, ZipWriter};
+use zip::{write::SimpleFileOptions, ZipWriter};
 
 pub fn create_cbz(input_dir: &TempDir, output_path: &str) -> Result<()> {
     let file = File::create(output_path)?;

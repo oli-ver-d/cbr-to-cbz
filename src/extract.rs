@@ -1,6 +1,5 @@
 use anyhow::{Ok, Result};
 use unrar::Archive;
-use std::path::PathBuf;
 use tempfile::{tempdir, TempDir};
 
 pub fn extract_cbr(cbr_path: &str) -> Result<TempDir> {

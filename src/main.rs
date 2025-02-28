@@ -7,8 +7,8 @@ fn main() {
     // return the out file path + success msg
 
     // e
-    let cbr_path = "/home/hitec/Downloads/temp/twd.cbr";
-    let out_path = "/home/hitec/Documents/comics/twd1.cbz";
+    let cbr_path = "placeholder";
+    let out_path = "placeholder";
 
     let extracted_path = extract::extract_cbr(cbr_path).unwrap();
     compress::create_cbz(&extracted_path, out_path).unwrap();
