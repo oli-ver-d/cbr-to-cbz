@@ -1,0 +1,11 @@
+[package]
+name = "cbr-to-cbz"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.96"
+clap = "4.5.31"
+tempfile = "3.17.1"
+unrar = "0.5.8"
+zip = "2.2.3"
