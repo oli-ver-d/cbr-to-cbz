@@ -4,8 +4,11 @@ use std::fs::remove_file;
 
 #[derive(Parser)]
 struct Args {
+    /// Path to CBR file
     input: String,
+    /// Path to CBZ file
     output: String,
+    /// Flag to delete CBR file after conversion
     #[arg(short, long)]
     delete: bool,
 }
