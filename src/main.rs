@@ -1,10 +1,13 @@
 use cbr_to_cbz::{extract, compress};
 use clap::Parser;
+use std::fs::remove_file;
 
 #[derive(Parser)]
 struct Args {
     input: String,
     output: String,
+    #[arg(short, long)]
+    delete: bool,
 }
 
 fn main() {
@@ -12,6 +15,10 @@ fn main() {
 
     println!("Extracting {}", &args.input);
     let extracted_path = extract::extract_cbr(&args.input).unwrap();
+    if args.delete {
+        remove_file(&args.input).expect("Failed to delete cbr file after extract.");
+        println!("Removed {}", &args.input);
+    }
     println!("Compressing {}", &args.output);
     compress::create_cbz(&extracted_path, &args.output).unwrap();
     println!("Successfully converted: {} -> {}", &args.input, &args.output);
