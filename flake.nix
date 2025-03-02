@@ -24,7 +24,7 @@
         };
 
         devShells.default = pkgs.mkShell {
-          buildInputs = [ toolchain ];
+          buildInputs = [ toolchain.cargo ];
         };
       }
     );
